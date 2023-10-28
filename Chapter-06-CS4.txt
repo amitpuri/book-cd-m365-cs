@@ -1,0 +1,19 @@
+// Code-Snippet #4
+
+ClearCollect(
+    locSortDropdown,
+    Table(
+        {
+            DisplayColumn: "No sort", ColumnName: ""
+        },
+        {
+            DisplayColumn: "State", ColumnName: "State"
+        },
+        {
+            DisplayColumn: "Friend Name", ColumnName: "FriendName"
+        },
+        {
+            DisplayColumn: "Last Updated", ColumnName: "LastUpdated"
+        }
+    )
+);
