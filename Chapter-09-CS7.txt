@@ -1,0 +1,23 @@
+UpdateContext({locSortOrder: !locSortOrder});
+UpdateContext(
+    {
+        tabReferrals: Filter(
+            SortByColumns(
+                Search(
+                    Referrals,
+                    txtSearch.Value,
+                    "nledu_name",
+                    "nledu_referralemail",
+                    "nledu_referralnotes"
+                ),
+                "nledu_referralstatus",
+                If(
+                    locSortOrder,
+                    SortOrder.Ascending,
+                    SortOrder.Descending
+                )
+            ),
+            'Referrals (Views)'.'My Referrals'
+        )
+    }
+);

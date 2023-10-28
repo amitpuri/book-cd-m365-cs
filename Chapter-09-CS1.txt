@@ -1,0 +1,12 @@
+Switch(
+    ThisItem.'Referral Status',
+    'Referral Status (Referrals)'.'Referral bonus settled',
+    Icon.Money,
+    'Referral Status (Referrals)'.'Admission team support needed',
+    Icon.Support,
+    'Referral Status (Referrals)'.'Referral bonus unlocked',
+    Icon.Unlock,
+    'Referral Status (Referrals)'.'Referral code shared',
+    Icon.Key,
+    Icon.LogJournal
+)

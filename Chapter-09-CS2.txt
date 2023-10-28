@@ -1,0 +1,12 @@
+Switch(
+    ThisItem.'Referral Status',
+    'Referral Status (Referrals)'.'Referral bonus settled',
+    "Referral bonus settled",
+    'Referral Status (Referrals)'.'Admission team support needed',
+    "Admission team support needed",
+    'Referral Status (Referrals)'.'Referral bonus unlocked',
+    "Referral bonus unlocked",
+    'Referral Status (Referrals)'.'Referral code shared',
+    "Referral code shared",
+    "Application submitted"
+)

@@ -1,0 +1,18 @@
+If(
+    'Send-a-email-to-friend-with-referral-code'.Run(
+        txtFriendEmail.Text,
+        "Referral Instructions",
+        lblReferralCode.Text,
+        User().FullName
+    ),
+    Notify(
+        "Email sent to " & txtFriendEmail.Text,
+        NotificationType.Success
+    );
+    Reset(txtFriendEmail);
+    ,
+    Notify(
+        "Error, We are not able to send mail!",
+        NotificationType.Error
+    )
+);

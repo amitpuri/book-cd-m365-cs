@@ -1,0 +1,16 @@
+Reset(txtSearch);
+UpdateContext(
+    {
+        locSortOrder: false,
+        locFiltered: false
+    }
+);
+Refresh(Referrals);
+UpdateContext(
+    {
+        tabReferrals: Filter(
+            Referrals,
+            'Referrals (Views)'.'My Referrals'
+        )
+    }
+);

@@ -1,0 +1,22 @@
+If(
+    IsMatch(
+        txtFriendEmail.Value,
+        "^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
+    ) && Last(
+        ForAll(
+            Split(
+                txtFriendEmail.Value,
+                "@"
+            ),
+            {Result: ThisRecord.Result}
+        )
+    ).Result in [
+        "gmail.com",
+        "outlook.com"
+    ],
+    DisplayMode.Edit,
+    DisplayMode.Disabled
+)
+
+// or simply use, if you do not want to limit gmail.com or outlook.com
+// If(IsMatch(txtFriendEmail.Text, Match.Email), DisplayMode.Edit,DisplayMode.Disabled)

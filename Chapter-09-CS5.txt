@@ -1,0 +1,30 @@
+If(
+    IsEmpty(
+        Filter(
+            'Referral Codes',
+            'Referral Codes (Views)'.'Active Referral Codes'
+        )
+    ),
+    Concat(
+        FirstN(
+            Shuffle(
+                ForAll(
+                    Split(
+                        "abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789",
+                        ""
+                    ),
+                    {Result: ThisRecord.Result}.Result
+                )
+            ),
+            8
+        ),
+        ThisRecord.Value
+    )    
+    ,
+    First(
+        Filter(
+            'Referral Codes',
+            'Referral Codes (Views)'.'Active Referral Codes'
+        )
+    ).Code
+)

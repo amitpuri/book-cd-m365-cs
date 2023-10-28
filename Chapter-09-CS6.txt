@@ -1,0 +1,22 @@
+UpdateContext({locFiltered: !locFiltered});
+If(
+    locFiltered,
+    UpdateContext(
+        {
+            tabReferrals: Filter(
+                Referrals,
+                'Referrals (Views)'.'My Referrals',
+                ThisRecord.'Referral Status' = 'Referral Status (Referrals)'.'Application submitted'
+            )
+        }
+    ),
+    UpdateContext(
+        {
+            tabReferrals: Filter(
+                Referrals,
+                'Referrals (Views)'.'My Referrals'
+            )
+        }
+    );
+    
+);

@@ -1,0 +1,77 @@
+ClearCollect(
+    locReferralList,
+    {
+        FriendName: "Steve",
+        FriendEmail: "Steve@gmail.com",
+        ReferralNotes: "The application submitted. The application is under review.",
+        StateToolTip: "The application submitted",
+        State: Icon.LogJournal,
+        LastUpdated: DateAdd(
+            Now(),
+            -1
+        )
+    },
+    {
+        FriendName: "Vijay",
+        FriendEmail: "Vijay@outlook.com",
+        ReferralNotes: "The referral bonus unlocked! You will receive instructions for claiming the payout.",
+        StateToolTip: "The referral bonus unlocked!",
+        State: Icon.Unlock,
+        LastUpdated: Now()
+    },
+    {
+        FriendName: "Priyanka",
+        FriendEmail: "Priyanka@gmail.com",
+        ReferralNotes: "The referral bonus settled. The payout amount is credited in your account XX162",
+        StateToolTip: "The referral bonus settled.",
+        State: Icon.Money,
+        LastUpdated: DateAdd(
+            Now(),
+            -5
+        )
+    },
+    {
+        FriendName: "Farida",
+        FriendEmail: "Farida@gmail.com",
+        ReferralNotes: "The applicant needs support from the admission team. Help needed on the admission documentation.",
+        StateToolTip: "Admission Team Support Needed.",
+        State: Icon.Support,
+        LastUpdated: DateAdd(
+            Now(),
+            -4
+        )
+    },
+    {
+        FriendName: "John",
+        FriendEmail: "John@gmail.com",
+        ReferralNotes: "The applicant needs support from the admission team. Help needed on the admission documentation.",
+        StateToolTip: "Admission Team Support Needed.",
+        State: Icon.Unlock,
+        LastUpdated: DateAdd(
+            Now(),
+            -9
+        )
+    },
+    {
+        FriendName: "Sundar",
+        FriendEmail: "Sundar@gmail.com",
+        ReferralNotes: "The referral bonus settled. The payout amount is credited in your account XX162",
+        StateToolTip: "The referral bonus settled.",
+        State: Icon.Money,
+        LastUpdated: DateAdd(
+            Now(),
+            -10
+        )
+    },
+    {
+        FriendName: "Allen",
+        FriendEmail: "Allen@gmail.com",
+        ReferralNotes: "The applicant needs support from the admission team. Help needed on the admission documentation.",
+        StateToolTip: "Admission Team Support Needed.",
+        State: Icon.LogJournal,
+        LastUpdated: DateAdd(
+            Now(),
+            -7
+        )
+    }
+);

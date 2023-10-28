@@ -1,0 +1,65 @@
+UpdateContext({varErrorCode: 0});
+If(
+    IsEmpty(
+        (Filter(
+            'Referral Codes',
+            'Referral Codes (Views)'.'Active Referral Codes'
+        ))
+    ),
+    Patch(
+        'Referral Codes',
+        Defaults('Referral Codes'),
+        {Code: lblReferralCode.Text}
+    );
+    UpdateContext({varErrorCode: 1});
+    ,
+    UpdateContext({varErrorCode: 2})
+);
+If(
+    IsEmpty(
+        Filter (
+            Referrals,
+            ThisRecord.'Referral Email' = txtFriendEmail.Value
+        )
+    ),
+    Patch(
+        Referrals,
+        Defaults(Referrals),
+        {
+            Name: txtFriendName.Value,
+            'Referral Email': txtFriendEmail.Value,
+            'Referral Notes': "The Referral code shared is shared with a friend.",
+            'Referral Status': 'Referral Status (Referrals)'.'Referral code shared'
+        }
+    );
+    UpdateContext({varErrorCode: 1});
+    ,
+    UpdateContext({varErrorCode: 2});
+    
+);
+If(
+    varErrorCode = 1,
+    UpdateContext({varEmailSubject: "Referral Instructions"}),
+    UpdateContext({varEmailSubject: "Resending-Referral Instructions"});
+    
+);
+If(
+    'Send-a-email-to-friend-with-referral-code'.Run(
+        txtFriendEmail.Value,
+        varEmailSubject,
+        lblReferralCode.Text,
+        User().FullName,
+        txtFriendName.Value
+    ),
+    Notify(
+        "Email sent to " & txtFriendEmail.Value,
+        NotificationType.Success
+    );
+    Reset(txtFriendEmail);
+    Reset(txtFriendName);
+    ,
+    Notify(
+        "Error, We are not able to send mail!",
+        NotificationType.Error
+    )
+);
