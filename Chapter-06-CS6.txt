@@ -1,0 +1,18 @@
+// Code-Snippet #6
+
+If(
+    !IsBlank(drpColumns.Selected.ColumnName),
+    UpdateContext({locSortOrder: !locSortOrder});
+    ClearCollect(
+        locReferralList,
+        SortByColumns(
+            locReferralList,
+            drpColumns.Selected.ColumnName,
+            If(
+                locSortOrder,
+                Ascending,
+                Descending
+            )
+        )
+    );
+)
